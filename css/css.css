@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+}
+
+.wrapper {
+    min-height: 100vh;
+    background: #ccc;
+    display: flex;
+    flex-direction: column;
+}
+
+.header, .footer {
+    height: 45px;
+    background: #666;
+    color: #fff;
+}
+
+.hdr {
+    margin-top: 5px;
+    font-size: 30px;
+}
+
+.content {
+    display: flex;
+    flex: 1;
+    background: #999;
+    color: #000;
+}
+
+.columns {
+    display: flex;
+    flex: 1;
+}
+
+.main {
+    flex: 1;
+    order: 2;
+    background: #eee;
+}
+
+.sidebar-first {
+    width: 5%;
+    background: #ccc;
+    order: 1;
+}
+
+.sidebar-second {
+    width: 5%;
+    order: 3;
+    background: #ddd;
+}
+
+.ifr {
+    width: 100%;
+    position: relative;
+}
+
+.carousel-control {
+    width: 5%;
+}
