@@ -17,7 +17,7 @@ function dd(...$args)
         var_dump($x);
     }
 
-    die(1);
+    die();
 }
 
 function dirToArray($dir)
