@@ -25,8 +25,10 @@ var vm = new Vue({
           if (data == [])
             return false;
           var data = JSON.parse(data);
-          self.img = data.shift();
-          self.all = data;
+          self.all = data[0];
+          self.img = self.all.shift();
+          self.loc = parseInt(data[1]);
+          self.img = self.all[self.loc];
           var frame = document.getElementById("ifr");
           frame.height = window.innerHeight;
         },
@@ -51,8 +53,20 @@ var vm = new Vue({
       } else if (this.loc > 0) {
         this.loc -= 1;
       }
+      c(this.loc)
       this.img = this.all[this.loc];
       $("html, body").animate({scrollTop: 0}, "slow");
+      $.ajax({
+        url: "php/data.php",
+        type: 'POST',
+        data: {act: 'set', data: this.loc},
+        success: function (data) {
+        
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          alert(errorThrown);
+        }
+      });
     }
   }
 })

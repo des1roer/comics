@@ -40,7 +40,14 @@ function dirToArray($dir)
 switch ($act) {
     case 'list':
         $data = dirToArray('../data/');
-        echo json_encode($data);
+        $active = 0;
+        if (is_file(__DIR__ . DIRECTORY_SEPARATOR . 'state.txt')) {
+            $active = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . 'state.txt');
+        }
+        echo json_encode([$data, $active]);
+        break;
+    case 'set':
+        echo json_encode(file_put_contents(__DIR__ . DIRECTORY_SEPARATOR . 'state.txt', $_POST['data']));
         break;
     default :
         break;
