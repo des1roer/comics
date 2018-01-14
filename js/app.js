@@ -56,3 +56,12 @@ var vm = new Vue({
     }
   }
 })
+
+window.addEventListener('keydown', function (e) {
+  console.log(e.keyCode);
+  if (e.keyCode == 39) {
+    vm.next();
+  } else if (e.keyCode == 37) { //left
+    vm.prev();
+  }
+});

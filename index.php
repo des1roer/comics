@@ -47,6 +47,6 @@
     <!--<footer class="footer">Footer: Fixed height</footer>-->
 </div>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.2/vue.min.js'></script>
-<script src="js/app.js?1.2"></script>
+<script src="js/app.js?1.3"></script>
 </body>
 </html>
